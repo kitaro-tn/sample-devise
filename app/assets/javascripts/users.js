@@ -13,4 +13,6 @@ $(function(){
       console.error(data);
     });
   });
+
+  $(".button-collapse").sideNav();
 });

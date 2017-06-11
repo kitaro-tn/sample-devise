@@ -16,6 +16,8 @@
       <nav>
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">Devise</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
 
           <ul class="right hide-on-med-and-down">
             <li><a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">list</i></a></li>
@@ -23,6 +25,14 @@
         </div>
       </nav>
       <ul id='dropdown1' class='dropdown-content'>
+        <% if user_session %>
+          <li><a href="#" id="logout">Logout</a></li>
+        <% else %>
+          <li><a href="/auth/register/cmon_let_me_in" id="sign-up">Sign up</a></li>
+          <li><a href="/auth/login" id="login">Login</a></li>
+        <% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
         <% if user_session %>
           <li><a href="#" id="logout">Logout</a></li>
         <% else %>
