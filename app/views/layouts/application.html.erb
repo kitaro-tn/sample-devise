@@ -11,8 +11,12 @@
 
   <body>
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <div class="card-panel light-blue-text text-darken-3 light-blue lighten-4"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="card-panel red-text text-darken-3 red lighten-4"><%= alert %></div>
+      <% end %>
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
