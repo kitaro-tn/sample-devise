@@ -7,9 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   </head>
 
   <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Devise</a>
+
+          <ul class="right hide-on-med-and-down">
+            <li><a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons">list</i></a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul id='dropdown1' class='dropdown-content'>
+        <% if user_session %>
+          <li><a href="#" id="logout">Logout</a></li>
+        <% else %>
+          <li><a href="/auth/register/cmon_let_me_in" id="sign-up">Sign up</a></li>
+          <li><a href="/auth/login" id="login">Login</a></li>
+        <% end %>
+      </ul>
+    </header>
     <div class="container">
       <% if notice %>
         <div class="card-panel light-blue-text text-darken-3 light-blue lighten-4"><%= notice %></div>
